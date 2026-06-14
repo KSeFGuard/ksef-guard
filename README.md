@@ -9,6 +9,10 @@
 
 `KSeF` · `FA(3)` · `faktura ustrukturyzowana` · `walidacja offline` · `e-invoicing` · `Poland` · proprietary, **free tier** · Windows GUI + Linux CLI
 
+<br>
+
+<img src="docs/screenshot-validation.png" alt="KSeF Guard validating an FA(3) invoice — a failed rule shown with its bilingual explanation, the legal citation, and the exact location in the XML" width="880">
+
 </div>
 
 > **What this repository is:** the **public home** of KSeF Guard — README, download links, checksums, the conformance report, a CI example, and the **issue tracker**. **It contains no engine source code.** KSeF Guard is a **commercial / proprietary** product with a **free tier** — see [Is this open source?](#-is-this-open-source--czy-to-open-source).
@@ -84,6 +88,11 @@ Primarily **accounting offices (biura rachunkowe)** and finance teams submitting
 > The free tier runs the **full rule set**. Paid is **office throughput + client reports** — batch, PDF/CSV/JSON exports, more machines, audit trail.
 
 ---
+
+<div align="center">
+<img src="docs/screenshot-rules.png" alt="KSeF Guard rule configuration — each of the 128 rules traces to a legal source (a VAT Act article or an FA(3) brochure table), with Recommended / Maximum / Essential presets" width="860">
+<br><sub><em>Every rule traces to a legal source — a VAT Act article or an FA(3) brochure table. · Każda reguła ma udokumentowane źródło prawne.</em></sub>
+</div>
 
 ## 🤖 Use the CLI in CI/CD
 
