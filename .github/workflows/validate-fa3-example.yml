@@ -1,0 +1,48 @@
+name: Validate FA(3) invoices (KSeF Guard)
+
+# EXAMPLE workflow — gate your CI on offline FA(3) / KSeF validation.
+# It downloads the free KSeF Guard Linux CLI from ksefguard.pl and validates
+# every *.xml under ./invoices, failing the build if any rule reports an error.
+#
+# Free tier: 10 files/day. For higher volume + PDF/CSV/JSON reports, activate a
+# license: https://www.ksefguard.pl/en/
+#
+# Adjust the paths/flags to your repo. Run `./ksef-guard --help` for all options.
+
+on:
+  push:
+    paths: ['invoices/**.xml']
+  pull_request:
+    paths: ['invoices/**.xml']
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download KSeF Guard CLI
+        run: |
+          curl -fsSL -o ksef-guard.tar.gz \
+            https://www.ksefguard.pl/downloads/ksef-guard-linux-amd64.tar.gz
+          tar xzf ksef-guard.tar.gz
+          chmod +x ksef-guard
+
+      - name: Show version
+        run: ./ksef-guard --version
+
+      - name: Validate invoices (fails the build on errors)
+        run: ./ksef-guard validate --format summary ./invoices/
+
+      # Optional: also produce a machine-readable report artifact
+      - name: Produce JSON report
+        if: always()
+        run: ./ksef-guard validate --format json --output ksef-report.json ./invoices/ || true
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ksef-validation-report
+          path: ksef-report.json

@@ -1,0 +1,45 @@
+name: Bug report
+description: Report a problem with the KSeF Guard app or a validation rule
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve KSeF Guard.
+
+        ⚠️ **For billing / license / account questions, email support@ksefguard.pl** — this tracker is for the app and the validation rules.
+
+        🔒 **Do NOT paste real invoice data.** Redact NIPs, names, and amounts before sharing XML snippets.
+  - type: input
+    id: version
+    attributes:
+      label: KSeF Guard version
+      description: From `ksef-guard --version`, or Help → About in the app.
+      placeholder: e.g. 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Windows (MSI / installed)
+        - Windows (portable ZIP)
+        - Linux (CLI)
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce it? Include a redacted XML snippet if relevant.
+    validations:
+      required: false

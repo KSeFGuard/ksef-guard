@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Billing, license & account help
+    url: https://www.ksefguard.pl/en/
+    about: For purchases, license keys, refunds, or account questions, email support@ksefguard.pl.
+  - name: Download KSeF Guard
+    url: https://www.ksefguard.pl/en/download/
+    about: Windows (MSI / portable) and Linux CLI downloads, with SHA-256 checksums.
+  - name: Conformance report
+    url: https://www.ksefguard.pl/downloads/conformance-report-v9.pdf
+    about: How KSeF Guard was tested against the official KSeF test API (256 invoices).
