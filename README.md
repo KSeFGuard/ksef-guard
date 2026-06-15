@@ -24,7 +24,7 @@
 **KSeF Guard** to **offline'owy walidator** polskich faktur **FA(3) / KSeF**. Sprawdza pełny **schemat XSD FA(3)** oraz **128 reguł biznesowych** z **podstawą prawną**, dwujęzycznie (PL/EN) — i wychwytuje **107 problemów, których samo KSeF nie egzekwuje**, **zanim** wyślesz fakturę. Wszystko działa **lokalnie** — dane faktur **nie opuszczają komputera**.
 
 ### Dlaczego to ważne
-KSeF sprawdza **składnię**. Prawo wymaga **treści**. W teście **256 faktur** wobec oficjalnego **API testowego KSeF** rządowe API **przyjęło 98 dokumentów**, które były **niezgodne z prawem**. KSeF Guard sprawdza jedno i drugie — strukturę **i** logikę biznesową — zanim faktura trafi do urzędu.
+KSeF sprawdza **składnię**. Prawo wymaga **treści**. W teście **256 faktur** wobec oficjalnego **API testowego KSeF** system **przyjął 98 faktur naruszających reguły, których nie sprawdza**. KSeF Guard wychwytuje wszystkie **107**, których API nie egzekwuje — **55 wymogów prawnych** i **52 dobre praktyki / bezpieczeństwo** — zanim faktura trafi do urzędu.
 
 ### Co potrafi
 - ✅ **Pełna walidacja XSD FA(3)** (schemat 1-0E) + **128 reguł** biznesowych/prawnych
@@ -56,10 +56,10 @@ Przede wszystkim **biura rachunkowe** i działy finansowe, które masowo wysyła
 
 ## 🇬🇧 English
 
-**KSeF Guard** is an **offline validator** for Polish **FA(3) / KSeF** e-invoices. It checks the full **FA(3) XSD** plus **128 business rules** with **legal citations**, bilingual (PL/EN) — and catches **107 issues KSeF itself does not enforce**, **before** you submit. Everything runs **locally** — invoice data **never leaves the device**.
+**KSeF Guard** is an **offline validator** for Polish **FA(3) / KSeF** e-invoices. *(KSeF is Poland's national e-invoicing system; FA(3) is its mandatory invoice XML schema.)* It checks the full **FA(3) XSD** plus **128 business rules** with **legal citations**, bilingual (PL/EN) — and catches **107 issues KSeF itself does not enforce**, **before** you submit. Everything runs **locally** — invoice data **never leaves the device**.
 
 ### Why it matters
-KSeF checks **syntax**. The law requires **substance**. In a test of **256 invoices** against the official **KSeF test API**, the government API **accepted 98 documents** that were **legally non-compliant**. KSeF Guard checks both — structure **and** business logic — before the invoice reaches the tax office.
+KSeF checks **syntax**. The law requires **substance**. In a test of **256 invoices** against the official **KSeF test API**, it **accepted 98 that break rules it doesn't check**. KSeF Guard catches all **107** the API misses — **55 legal requirements** and **52 best-practice / security checks** — before the invoice reaches the tax office.
 
 ### What it does
 - ✅ **Full FA(3) XSD validation** (schema 1-0E) + **128** business/legal rules
@@ -131,7 +131,7 @@ A pack of example FA(3) XML files (valid + intentionally failing) is available f
 
 ## 📊 Proof: the conformance report
 
-We submitted **256 real invoices** to the official **KSeF test API** and recorded which legally-non-compliant ones it accepted. The full methodology + per-rule results are in the public **[conformance report (PDF)](https://www.ksefguard.pl/downloads/conformance-report-v9.pdf)**.
+We submitted **256 real invoices** to the official **KSeF test API** and recorded which **non-compliant** ones it accepted (it accepted **98**). The full methodology + per-rule results are in the public **[conformance report (PDF)](https://www.ksefguard.pl/downloads/conformance-report-v9.pdf)**.
 
 ## ❓ Is this open source? / Czy to open source?
 
